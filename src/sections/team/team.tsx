@@ -17,7 +17,7 @@ import 'swiper/css/thumbs';
 import './team.css';
 
 export default function TeamSwiper() {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+  const [thumbsSwiper] = useState<SwiperClass | null>(null);
 
   return (
     <>
@@ -37,42 +37,50 @@ export default function TeamSwiper() {
       >
         <SwiperSlide>
           <img src={team} alt="Team" />
-          <h2 className='swiper-txt'> Nosso time de tecnico!</h2>
+          <h2 className='team description' data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"> Nosso time de tecnico!</h2>
         </SwiperSlide>
         <SwiperSlide>
           <img src={fisioterapeuta1} alt="Fisioterapeuta 1" />
+          <div className='description'>
+            <h1 className='medic-name'> Dra. Ana Beatriz Lima</h1>
+            <h2 className='speciality'>Fisioterapia Pediátrica</h2>
+            <h3 className='resume'> Atua há 5 anos com fisioterapia pediátrica,
+              ajudando pequenos pacientes com dificuldades motoras a
+              se desenvolverem com mais autonomia e confiança.
+            </h3>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={fisioterapeuta2} alt="Fisioterapeuta 2" />
+          <div className='description'>
+            <h1 className='medic-name'> Dr. Rafael Monteiro</h1>
+            <h2 className='speciality'> Reabilitação Ortopédica</h2>
+            <h3 className='resume'> Atua há mais de 8 anos, com foco em recuperação
+              pós-cirúrgica e prevenção de lesões esportivas.
+            </h3>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={fisioterapeuta3} alt="Fisioterapeuta 3" />
+          <div className='description'>
+            <h1 className='medic-name'>Dr. Lucas Andrade</h1>
+            <h2 className='speciality'> Fisioterapia Esportiva  </h2>
+            <h3 className='resume'> Com 7 anos de atuação, Lucas trabalha com atletas
+              amadores e profissionais,
+              utilizando técnicas modernas de recuperação funcional.
+            </h3>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={fisioterapeuta4} alt="Fisioterapeuta 4" />
-        </SwiperSlide>
-      </Swiper>
-      <Swiper
-        onSwiper={(swiper: SwiperClass) => setThumbsSwiper(swiper)}
-        loop={true}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src={fisioterapeuta1} alt="Fisioterapeuta 1" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={fisioterapeuta2} alt="Fisioterapeuta 2" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={fisioterapeuta3} alt="Fisioterapeuta 3" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={fisioterapeuta4} alt="Fisioterapeuta 4" />
+          <div className='description'>
+            <h1 className='medic-name'> Dra. Mariana Costa</h1>
+            <h2 className='speciality'> Fisioterapia Neurológica</h2>
+            <h3 className='resume'>trabalha há 6 anos na reabilitação de pacientes com
+              doenças neurológicas, como AVC e Parkinson.
+            </h3>
+          </div>
         </SwiperSlide>
       </Swiper>
     </>

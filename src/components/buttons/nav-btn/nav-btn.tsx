@@ -13,13 +13,13 @@ function NavBtn() {
         { id: '#1', name: 'Agendar' },
         { id: '#2', name: 'Onde estamos' },
         { id: '#3', name: 'Equipe' },
-        { id: '#4', name: 'Entre em contato' },
+        { id: '#4', name: 'Pacientes' },
     ]
 
     return (
         <>
-            {btnLabel.map((btnName) => (
-                <a className="nav-btn" href={btnName.id}>{btnName.name}</a>
+            {btnLabel.map((btnName, index) => (
+                <a key={index} className="nav-btn" href={btnName.id}>{btnName.name}</a>
             ))}
         </>
     )

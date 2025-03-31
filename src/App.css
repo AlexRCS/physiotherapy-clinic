@@ -11,7 +11,6 @@ header {
 }
 
 .banner-logo {
-    filter: brightness(0) invert(1);
     max-width: 100%;
     max-height: 90%;
     object-fit: cover;
@@ -22,9 +21,4 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-}
-
-.team{
-    min-width: 100vw;
-    background-color: #2FB4AD;
 }
