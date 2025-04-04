@@ -22,3 +22,24 @@ nav {
     justify-content: space-evenly;
     width: 100%;
 }
+
+@media only screen and (max-width:450px) {
+
+    header {
+        justify-content: center;
+        height: 60vh;
+        padding: 0;
+    }
+
+    .banner-logo {
+        min-width: 100vw;
+    }
+
+    nav {
+        display: none;
+    }
+
+
+
+
+}

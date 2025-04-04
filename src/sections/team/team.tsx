@@ -37,14 +37,16 @@ export default function TeamSwiper() {
       >
         <SwiperSlide>
           <img src={team} alt="Team" />
-          <h2 className='team description' data-aos="fade-right"
-            data-aos-anchor-placement="top-bottom"> Nosso time de tecnico!</h2>
+          <div className='team description'>
+            <h2 className='team-title' data-aos="fade-right"
+              data-aos-anchor-placement="top-bottom"> Nosso time de tecnico!</h2>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={fisioterapeuta1} alt="Fisioterapeuta 1" />
           <div className='description'>
             <h1 className='medic-name'> Dra. Ana Beatriz Lima</h1>
-            <h2 className='speciality'>Fisioterapia Pediátrica</h2>
+            <h2 className='speciality'><span>Fisioterapia Pediátrica </span></h2>
             <h3 className='resume'> Atua há 5 anos com fisioterapia pediátrica,
               ajudando pequenos pacientes com dificuldades motoras a
               se desenvolverem com mais autonomia e confiança.
@@ -55,7 +57,7 @@ export default function TeamSwiper() {
           <img src={fisioterapeuta2} alt="Fisioterapeuta 2" />
           <div className='description'>
             <h1 className='medic-name'> Dr. Rafael Monteiro</h1>
-            <h2 className='speciality'> Reabilitação Ortopédica</h2>
+            <h2 className='speciality'><span> Reabilitação Ortopédica </span></h2>
             <h3 className='resume'> Atua há mais de 8 anos, com foco em recuperação
               pós-cirúrgica e prevenção de lesões esportivas.
             </h3>
@@ -65,7 +67,7 @@ export default function TeamSwiper() {
           <img src={fisioterapeuta3} alt="Fisioterapeuta 3" />
           <div className='description'>
             <h1 className='medic-name'>Dr. Lucas Andrade</h1>
-            <h2 className='speciality'> Fisioterapia Esportiva  </h2>
+            <h2 className='speciality'><span> Fisioterapia Esportiva </span> </h2>
             <h3 className='resume'> Com 7 anos de atuação, Lucas trabalha com atletas
               amadores e profissionais,
               utilizando técnicas modernas de recuperação funcional.
@@ -76,7 +78,7 @@ export default function TeamSwiper() {
           <img src={fisioterapeuta4} alt="Fisioterapeuta 4" />
           <div className='description'>
             <h1 className='medic-name'> Dra. Mariana Costa</h1>
-            <h2 className='speciality'> Fisioterapia Neurológica</h2>
+            <h2 className='speciality'><span> Fisioterapia Neurológica </span></h2>
             <h3 className='resume'>trabalha há 6 anos na reabilitação de pacientes com
               doenças neurológicas, como AVC e Parkinson.
             </h3>

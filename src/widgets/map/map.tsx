@@ -3,12 +3,6 @@ import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 import './map.css'
 
-const containerStyle = {
-    width: '100%',
-    height: '450px',
-    borderRadius: '20px',
-    border: '5px solid #2FB4AD'
-};
 
 const coords = {
     lat: 40.860062,
@@ -29,7 +23,7 @@ const MapComponent: React.FC = () => {
                 <div className='map-container' data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom">
                     <GoogleMap
-                        mapContainerStyle={containerStyle}
+                         mapContainerClassName="map-style"
                         center={coords}
                         zoom={15} >
                         <Marker position={coords} />

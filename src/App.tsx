@@ -10,11 +10,14 @@ import './App.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Relates from './sections/relates/relates'
+import ToUpsideBtn from './components/buttons/to-upside-btn/to-upside-btn'
+
+
 
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
+      duration: 2500,
       once: true,
     })
   }, [])
@@ -22,11 +25,12 @@ function App() {
   return (
     <>
       <header>
-        <img className="banner-logo" src={headerBanner} alt="banner" />
-        <nav>
+        <img id='0' className="banner-logo" src={headerBanner} alt="banner" />
+        <nav >
           <NavBtn />
         </nav>
       </header>
+      <ToUpsideBtn />
       <About />
       <section className='location' id='2'>
         <Map />

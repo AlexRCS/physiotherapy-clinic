@@ -16,8 +16,22 @@ export default function Relates() {
     return (
         <>
             <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
+                style={
+                    {
+                        '--swiper-navigation-color': '#fff',
+                        '--swiper-pagination-color': '#fff',
+                    } as React.CSSProperties
+                }
+                breakpoints={
+                    {
+                        450: {
+                            slidesPerView: 4,
+                            spaceBetween: 30
+                        }
+                    }
+                }
+                slidesPerView={1.5}
+                spaceBetween={10}
                 freeMode={true}
                 navigation={true}
                 pagination={{
@@ -26,63 +40,63 @@ export default function Relates() {
                 modules={[FreeMode, Pagination, Navigation]}
                 className="relates-swiper"
             >
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user' id='4'>
                         <img src={relatef} alt="user-img" />
                         <h3 className='relate-name'>Juliana S.</h3>
                     </div>
                     <p>Voltei a andar sem dor. Gratidão imensa!</p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatem} alt="user-img" />
                         <h4 className='relate-name'>Marcos A.</h4>
                     </div>
                     <p>Melhorei rápido graças ao cuidado de vocês.</p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatem} alt="user-img" />
                         <h4 className='relate-name'>Rafael L</h4>
                     </div>
                     <p>Atendimento impecável. Só tenho a agradecer!</p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatem} alt="user-img" />
                         <h4 className='relate-name'>Daniel P.</h4>
                     </div>
                     <p>Alívio total das dores. Muito obrigado!</p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatef} alt="user-img" />
                         <h4 className='relate-name'>Renata C.</h4>
                     </div>
                     <p>Cuidaram de mim como família. Obrigada!</p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatef} alt="user-img" />
                         <h4 className='relate-name'>Camila R.</h4>
                     </div>
                     <p>Transformaram minha rotina. Eternamente grata!</p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatem} alt="user-img" />
                         <h4 className='relate-name'>Gustavo F.</h4>
                     </div>
                     <p>Foram essenciais na minha recuperação. Gratidão! </p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatem} alt="user-img" />
                         <h4 className='relate-name'>Henrique V.</h4>
                     </div>
                     <p>Profissionalismo e carinho em cada sessão. Obrigado! </p>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className='relates-container'>
                     <div className='relate-user'>
                         <img src={relatef} alt="user-img" />
                         <h4 className='relate-name'>Bianca T.</h4>

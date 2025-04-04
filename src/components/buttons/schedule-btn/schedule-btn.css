@@ -22,3 +22,11 @@
 .schedule-btn i {
     font-size: 30px;
 }
+
+@media only screen and (max-width:450px) {
+
+    .schedule-btn{
+        border: double 3px #ffffff;
+    }
+
+}

@@ -4,7 +4,7 @@
     padding-bottom: 50px;
 }
 
-.swiper-slide {
+.relates-container {
     border: double 3px #ffffff;
     border-radius: 20px;
     text-align: center;
@@ -37,4 +37,19 @@
 .relate-user {
     width: 60%;
     color: #ffffff;
+}
+
+
+@media only screen and (max-width:450px) {
+
+    .relates-container {
+        min-width: 60%;
+        max-height: 400px;
+    }
+
+    .relates-swiper {
+        height: 400px;
+    }
+
+
 }

@@ -1,10 +1,22 @@
+import { useState } from 'react'
 import './schedule-btn.css'
+import SmsForm from '../../modals/sms-modal'
 
 function ScheduleBtn() {
+
+  const [open, setOpen] = useState<boolean>(false)
+
+
+  const handleClick = () => {
+    setOpen(true)
+  }
+
   return (
     <>
-      <a className='schedule-btn' href='#1' >Agendar <i className="fa-brands fa-whatsapp"></i></a >
+      <button className='schedule-btn' onClick={handleClick} >Agendar <i className="fa-brands fa-whatsapp"></i></button >
+      {open && <SmsForm setOpen={setOpen} />}
     </>
+
   )
 }
 

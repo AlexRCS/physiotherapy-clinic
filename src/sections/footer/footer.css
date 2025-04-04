@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     background-color: #2FB4AD;
     color: #ffffffff;
     height: 50vh;
@@ -34,4 +35,10 @@ li {
 a {
     text-decoration: none;
     color: #ffffffff;
+}
+
+@media only screen and (max-width:450px) {
+
+
+
 }

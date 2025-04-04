@@ -12,11 +12,11 @@ function About() {
                     Quer dar o primeiro passo rumo à recuperação e ao bem-estar?
                 </span>
                 <p>
-                    Procure nossa clínica e agende uma avaliação.
+                    Agende já uma avaliação!
                 </p>
                 <ScheduleBtn />
             </article>
-            <img src={fisioterapeuta} alt="images-fisioterapeuta" />
+            <img className='about-img' src={fisioterapeuta} alt="images-fisioterapeuta" />
         </section>
     )
 }

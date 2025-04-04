@@ -1,0 +1,23 @@
+.upside-btn {
+    background-color: #2FB4AD;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    color: #ffffff;
+    z-index: 10;
+    font-size: 50px;
+    top: 80vh;
+    right: 2vh;
+    cursor: pointer;
+    mix-blend-mode: multiply ;
+}
+
+.upside-btn i{
+    transition: opacity ease 0.3s;
+}
+
+.upside-btn i:hover {
+    opacity: 0.8;
+}
