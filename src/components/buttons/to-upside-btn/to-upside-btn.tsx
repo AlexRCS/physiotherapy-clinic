@@ -1,12 +1,31 @@
-import './to-upside-btn.css'
+import React, { useState, useEffect } from 'react';
+import './to-upside-btn.css';
 
-function ToUpsideBtn() {
+const ToUpsideBtn: React.FC = () => {
+  const [visible, setVisible] = useState(false);
+  const scrollThreshold = 400;
 
-    return (
-        <button className="upside-btn">
-            <a href="#0"><i className="fa-solid fa-caret-up"></i></a>
-        </button>
-    )
-}
+  const toggleVisibility = () => {
+    setVisible(window.pageYOffset > scrollThreshold);
+  };
 
-export default ToUpsideBtn
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  return (
+    <button 
+      className={`upside-btn ${visible ? 'visible' : ''}`}
+      onClick={scrollToTop}
+    >
+      <i className="fa-solid fa-caret-up"></i>
+    </button>
+  );
+};
+
+export default ToUpsideBtn;

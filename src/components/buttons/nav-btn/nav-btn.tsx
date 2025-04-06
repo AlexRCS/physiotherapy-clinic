@@ -7,7 +7,7 @@ type Btn = {
 
 
 
-function NavBtn() {
+function NavBtn({ setIsOpen }) {
 
     const btnLabel: Btn = [
         { id: '#1', name: 'Agendar' },
@@ -16,10 +16,14 @@ function NavBtn() {
         { id: '#4', name: 'Pacientes' },
     ]
 
+    const handleClick = () => {
+        setIsOpen(false)
+    }
+
     return (
         <>
             {btnLabel.map((btnName, index) => (
-                <a key={index} className="nav-btn" href={btnName.id}>{btnName.name}</a>
+                <a key={index} onClick={handleClick} className="nav-btn" href={btnName.id}>{btnName.name}</a>
             ))}
         </>
     )

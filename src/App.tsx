@@ -11,6 +11,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Relates from './sections/relates/relates'
 import ToUpsideBtn from './components/buttons/to-upside-btn/to-upside-btn'
+import Sidebar from './components/buttons/side-bar/side-bar'
 
 
 
@@ -26,6 +27,7 @@ function App() {
     <>
       <header>
         <img id='0' className="banner-logo" src={headerBanner} alt="banner" />
+          <Sidebar />
         <nav >
           <NavBtn />
         </nav>
