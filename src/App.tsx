@@ -32,7 +32,7 @@ function App() {
     <>
       <header>
         <img id='0' className="banner-logo" src={headerBanner} alt="banner" />
-        <Sidebar />
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}  />
         <nav >
           <NavBtn setIsOpen={setIsOpen} />
         </nav>

@@ -8,7 +8,6 @@ import './sms-modal.css';
 
 import ReactDOM from 'react-dom';
 
-// Definição do schema de validação com Zod
 const schema = z.object({
   name: z.string().min(3, { message: '*Campo obrigatório' }),
   lastname: z.string().min(3, { message: '*Campo obrigatório' }),
