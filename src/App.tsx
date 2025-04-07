@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import NavBtn from './components/buttons/nav-btn/nav-btn'
 import About from './sections/about/about'
 import Map from './widgets/map/map'
@@ -16,6 +16,9 @@ import Sidebar from './components/buttons/side-bar/side-bar'
 
 
 function App() {
+
+  const [isOpen, setIsOpen] = useState(false)
+
   useEffect(() => {
     AOS.init({
       duration: 2500,
@@ -23,13 +26,15 @@ function App() {
     })
   }, [])
 
+
+
   return (
     <>
       <header>
         <img id='0' className="banner-logo" src={headerBanner} alt="banner" />
-          <Sidebar />
+        <Sidebar />
         <nav >
-          <NavBtn />
+          <NavBtn setIsOpen={setIsOpen} />
         </nav>
       </header>
       <ToUpsideBtn />

@@ -1,14 +1,16 @@
 import './nav-btn.css'
+import React from 'react'
 
 type Btn = {
     id: string
     name: string
 }[]
 
+interface NavBtnProps {
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-
-function NavBtn({ setIsOpen }) {
-
+const NavBtn: React.FC<NavBtnProps> = ({ setIsOpen }) => {
     const btnLabel: Btn = [
         { id: '#1', name: 'Agendar' },
         { id: '#2', name: 'Onde estamos' },
@@ -22,8 +24,10 @@ function NavBtn({ setIsOpen }) {
 
     return (
         <>
-            {btnLabel.map((btnName, index) => (
-                <a key={index} onClick={handleClick} className="nav-btn" href={btnName.id}>{btnName.name}</a>
+            {btnLabel.map((btn, index) => (
+                <a key={index} onClick={handleClick} className="nav-btn" href={btn.id}>
+                    {btn.name}
+                </a>
             ))}
         </>
     )
