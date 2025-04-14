@@ -5,7 +5,6 @@ import { z } from 'zod';
 import PhoneInputWithCountry from 'react-phone-number-input/react-hook-form';
 import 'react-phone-number-input/style.css';
 import './sms-modal.css';
-
 import ReactDOM from 'react-dom';
 
 const schema = z.object({
@@ -16,6 +15,9 @@ const schema = z.object({
 });
 
 type FormField = z.infer<typeof schema>;
+
+// Defina a URL base do back-end diretamente
+const API_BASE_URL = 'https://physiotherapy-clinic-server-production.up.railway.app/';
 
 interface SmsFormProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,7 +38,7 @@ function SmsForm({ setOpen }: SmsFormProps) {
 
   const onSubmit: SubmitHandler<FormField> = async (data) => {
     try {
-      const response = await fetch('/api/sendSMS', {
+      const response = await fetch(`${API_BASE_URL}/api/sendSMS`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -59,7 +61,13 @@ function SmsForm({ setOpen }: SmsFormProps) {
 
   return ReactDOM.createPortal(
     <form onSubmit={handleSubmit(onSubmit)} className="modal-window">
-      <button className="close-btn" onClick={() => { setOpen(false) }}>
+      <button
+        className="close-btn"
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen(false);
+        }}
+      >
         <i className="fa-solid fa-xmark"></i>
       </button>
       <h2>
@@ -68,32 +76,17 @@ function SmsForm({ setOpen }: SmsFormProps) {
       {errorMessage && <div className="error-message">{errorMessage}</div>}
 
       <div>
-        <input
-          type="text"
-          placeholder="Nome"
-          {...register('name')}
-          className="form-input"
-        />
+        <input type="text" placeholder="Nome" {...register('name')} className="form-input" />
         {errors.name && <div className="error-message">{errors.name.message}</div>}
       </div>
 
       <div>
-        <input
-          type="text"
-          placeholder="Último nome"
-          {...register('lastname')}
-          className="form-input"
-        />
+        <input type="text" placeholder="Último nome" {...register('lastname')} className="form-input" />
         {errors.lastname && <div className="error-message">{errors.lastname.message}</div>}
       </div>
 
       <div>
-        <input
-          type="email"
-          placeholder="email@example.com"
-          {...register('email')}
-          className="form-input"
-        />
+        <input type="email" placeholder="email@example.com" {...register('email')} className="form-input" />
         {errors.email && <div className="error-message">{errors.email.message}</div>}
       </div>
 

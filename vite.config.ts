@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'physiotherapy-clinic-server.railway.internal',
+        target: 'https://physiotherapy-clinic-server-production.up.railway.app/',
         changeOrigin: true,
         secure: false,
       },

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import './map.css';
 
+// Coordenadas para centralizar o mapa
 const coords = { lat: 40.860062, lng: -8.626264 };
+
+// Defina a URL base do back-end diretamente
+const API_BASE_URL = 'https://physiotherapy-clinic-server-production.up.railway.app/';
 
 const MapWithApiKey = ({ apiKey }: { apiKey: string }) => {
   const { isLoaded } = useJsApiLoader({
@@ -24,10 +28,12 @@ const Map: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
-    fetch('physiotherapy-clinic-server.railway.internal')
+    fetch(`${API_BASE_URL}/api/map-api-key`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Erro na requisição: ${response.status}`);
+          return response.text().then((text) => {
+            throw new Error(`Erro na requisição: ${response.status} - ${text}`);
+          });
         }
         return response.json();
       })
@@ -46,11 +52,7 @@ const Map: React.FC = () => {
 
   return (
     <section className="map-section">
-      <div
-        className="map-container"
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
-      >
+      <div className="map-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <MapWithApiKey apiKey={apiKey} />
       </div>
     </section>
