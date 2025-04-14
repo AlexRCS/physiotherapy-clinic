@@ -16,9 +16,8 @@ const schema = z.object({
 
 type FormField = z.infer<typeof schema>;
 
-// URL base do seu back-end
 const rawAPIBase = 'https://physiotherapy-clinic-server-production.up.railway.app';
-// Remover a barra final para evitar duplicação na concatenação
+
 const API_BASE_URL = rawAPIBase.replace(/\/+$/, '');
 
 interface SmsFormProps {
@@ -40,7 +39,6 @@ function SmsForm({ setOpen }: SmsFormProps) {
 
   const onSubmit: SubmitHandler<FormField> = async (data) => {
     try {
-      // Faz requisição para o endpoint POST /api/sendSMS definido no seu server.js
       const response = await fetch(`${API_BASE_URL}/api/sendSMS`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
