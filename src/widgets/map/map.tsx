@@ -24,7 +24,7 @@ const Map: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
-    fetch('physiotherapy-clinic-server-production.up.railway.app')
+    fetch('physiotherapy-clinic-server.railway.internal')
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Erro na requisição: ${response.status}`);
