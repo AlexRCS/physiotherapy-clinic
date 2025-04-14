@@ -5,8 +5,10 @@ import './map.css';
 // Coordenadas para centralizar o mapa
 const coords = { lat: 40.860062, lng: -8.626264 };
 
-// Defina a URL base do back-end diretamente
-const API_BASE_URL = 'https://physiotherapy-clinic-server-production.up.railway.app/';
+// URL base do seu back-end (substitua pelo domínio público correto do Railway)
+const rawAPIBase = 'https://physiotherapy-clinic-server-production.up.railway.app';
+// Remove a barra final, se houver, para evitar duplicação na concatenação
+const API_BASE_URL = rawAPIBase.replace(/\/+$/, '');
 
 const MapWithApiKey = ({ apiKey }: { apiKey: string }) => {
   const { isLoaded } = useJsApiLoader({
@@ -28,6 +30,7 @@ const Map: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
+    // Faz requisição para o endpoint GET /api/map-api-key definido no seu server.js
     fetch(`${API_BASE_URL}/api/map-api-key`)
       .then((response) => {
         if (!response.ok) {
